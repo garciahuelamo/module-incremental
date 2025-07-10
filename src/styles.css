@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+button {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  button {
+    font-size: 14px;
+    width: 100%;
+  }
+}

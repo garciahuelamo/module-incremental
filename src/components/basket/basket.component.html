@@ -1,0 +1,34 @@
+<div class="basket-container">
+  <div class="basket-column">
+    <h2>Carrito</h2>
+    <ul>
+      <li *ngFor="let item of basketItems">
+        {{ item.product.title }} - {{ item.quantity }} x {{ item.product.price | currency }}
+      </li>
+    </ul>
+    <hr />
+    <p><strong>Total:</strong> {{ total | currency }}</p>
+  </div>
+
+  <div class="basket-column">
+    <h2>Envío</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label>Nombre:
+        <input type="text" [(ngModel)]="formData.nombre" name="nombre" required />
+      </label>
+      <label>Apellido:
+        <input type="text" [(ngModel)]="formData.apellido" name="apellido" required />
+      </label>
+      <label>Dirección:
+        <input type="text" [(ngModel)]="formData.direccion" name="direccion" required />
+      </label>
+      <label>Código Postal:
+        <input type="text" [(ngModel)]="formData.cp" name="cp" required />
+      </label>
+      <label>Teléfono:
+        <input type="tel" [(ngModel)]="formData.telefono" name="telefono" required />
+      </label>
+      <button type="submit">Aceptar</button>
+    </form>
+  </div>
+</div>

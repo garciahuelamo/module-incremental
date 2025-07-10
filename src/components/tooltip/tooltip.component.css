@@ -1,0 +1,63 @@
+.button-login {
+    text-align: right;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* El botón está a la derecha */
+  align-items: center;
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  color: white;
+  width: 400px;  
+  margin-left: auto; 
+}
+
+.hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none; /* Oculto por defecto, visible en móvil */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive: en pantallas menores a 768px */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Mostrar hamburguesa en móvil */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #333;
+    flex-direction: column;
+    width: 150px;
+    display: none;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+.img-fluid {
+  width: 300px; 
+  height: auto; 
+}

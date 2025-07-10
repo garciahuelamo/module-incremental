@@ -1,0 +1,47 @@
+<h2>Formulario de pago</h2>
+<form (ngSubmit)="processPayment()" #paymentForm="ngForm">
+
+  <label>
+    Número de tarjeta:
+    <input 
+      type="text" 
+      name="cardNumber" 
+      [(ngModel)]="cardNumber" 
+      required 
+      minlength="19"
+      maxlength="19"
+      placeholder="4999 9999 9999 9999"
+      pattern="\d{4} \d{4} \d{4} \d{4}"
+    />
+  </label>
+
+  <label>
+    Fecha de caducidad:
+    <input 
+      type="text" 
+      name="expiryDate" 
+      [(ngModel)]="expiryDate" 
+      required 
+      pattern="\d{2}/\d{2}"
+      placeholder="XX/XX"
+    />
+  </label>
+
+  <label>
+    CVC:
+    <input 
+      type="text" 
+      name="cvc" 
+      [(ngModel)]="cvc" 
+      required 
+      minlength="3"
+      maxlength="3"
+      pattern="\d{3}"
+      placeholder="XXX"
+    />
+  </label>
+
+  <button type="submit" [disabled]="loading || !paymentForm.form.valid">Pagar</button>
+</form>
+
+<div *ngIf="loading">Procesando pago...</div>

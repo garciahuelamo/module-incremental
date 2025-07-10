@@ -1,0 +1,18 @@
+<h2>{{ title }}</h2>
+
+<nav class="navbar">
+    <div class="button-login">
+        <button class="hamburger" (click)="toggleMenu()">
+             &#9776;
+        </button>
+    </div>
+
+    <ul [class.open]="menuOpen" class="nav-links">
+        <li><a routerLink="/">Login</a></li>
+    </ul>
+</nav>
+
+
+
+<img class="img-fluid" src="/images/OIP.jpg">
+

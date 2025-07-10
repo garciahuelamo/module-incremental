@@ -1,0 +1,12 @@
+<h2>Catálogo de Productos</h2>
+
+<app-search *ngIf="!selectedProductId" (searchResults)="onProductSelected($event)"></app-search>
+
+<app-product-details 
+  *ngIf="selectedProductId && !showPayment" 
+  [productId]="selectedProductId" 
+  (proceed)="onProceedToPayment()"
+  (back)="onBackToProducts()">
+</app-product-details>
+
+<app-payment *ngIf="showPayment"></app-payment>

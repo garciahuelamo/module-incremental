@@ -1,0 +1,27 @@
+.cart-icon {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .cart-icon {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .cart-icon-mobile {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}
